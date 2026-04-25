@@ -1,24 +1,7 @@
 header {
     width: 100%;
     padding: 20px 10%;
-    position: relative;
-}
-
-body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 500px;
-    background-color: #a40814;
-    
-    background-image: url('../banner.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;    
-
-    z-index: -1;
+    position: fixed;
 }
 
 #navbar {
@@ -53,9 +36,23 @@ body::before {
     color: #999;
     font-size: 11px;
     font-weight: 500;
+    
+    transition: all .3s ease;
 }
+
+.nav-actions .icon_user path,
+.nav-actions .icon_gear path {
+    fill: #999;
+    transition: fill .3s ease;
+}
+
 .nav-actions:hover {
     color: #d10010;
+}
+
+.nav-actions:hover .icon_user path,
+.nav-actions:hover .icon_gear path {
+    fill: #d10010;
 }
 
 .nav-center {
@@ -99,13 +96,16 @@ body::before {
 @media screen and (max-width: 1170px) {
     #nav_list,
     .nav-actions, 
-    .btn-default {
+    .btn-demo {
         display: none;
     }
     
     header {
         padding: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
     #navbar {
         background-color: transparent;
         box-shadow: none;
@@ -147,8 +147,10 @@ body::before {
         gap: 12px;
         margin: 12px 0px;
     }
+
     #mobile_nav_list .nav-item{
         list-style: none;
         text-align: center;
+        color: #666666;
     }
 }
