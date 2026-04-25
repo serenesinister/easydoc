@@ -1,12 +1,35 @@
 header {
     width: 100%;
-    padding: 33px 12%;
+    padding: 20px 10%;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-color: #a40814;
+    
+    background-image: url('../banner.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    
+
+    z-index: -1;
 }
 
 #navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 30px;
+    background-color: #ffffff;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .icon_logo {
@@ -80,6 +103,19 @@ header {
         display: none;
     }
     
+    header {
+        padding: 15px;
+    }
+    #navbar {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    body::before {
+        top: 90px; /* desce o fundo */
+        height: 400px; /* ajusta se quiser */
+    }
+
     .btn-menu {
         display: block;
         border: none;
